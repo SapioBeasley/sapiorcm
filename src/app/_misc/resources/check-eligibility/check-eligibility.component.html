@@ -1,0 +1,62 @@
+<div class="d-flex flex-column">
+  <div class="row align-items-center bg-primary check-contrast py-4">
+    <div class="col-xl-9 col-lg-11 container-alt text-light toggles-ignore mx-auto py-5">
+      <div class="row py-2">
+        <div class="col-xl-7 col-lg-8 py-2 text-center text-lg-left">
+          <h1 class="display-4 mb-0">
+            <span>{{step.title}}</span>
+          </h1>
+
+          <p class="lead mb-3">
+            <span>{{step.desc}}</span>
+          </p>
+
+          <p class="small">
+            Looking for the software itself? Site will be released
+            <a class="toggles-ignore text-light" [routerLink]="['/']">
+              <u>Here</u>
+            </a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row align-items-center check-contrast py-5">
+    <div class="col-xl-9 col-lg-11 container-alt toggles-ignore mx-auto">
+      <strong>Description</strong>
+
+      <p>
+        <small>**This is to be done before the patient is seen by the doctor!</small>
+      </p>
+
+      <p>Along with the customers demographic details you will also need, insurance group number (npi), and the policy
+        number. With the exception of the patient's name (if they are not the policy holder) this information is located
+        on the insurance card.</p>
+
+      <p>After the insurance provider has been contacted and all requirements have been met, the billing process should
+        be explained to the patient. The patient should be informed of services not covered by their insurance plan and
+        the out-of-pocket costs of those services. Having all parties understand and agree to their financial
+        responsibility ensures the medical billing process will proceed smoothly. Likewise, if the patient’s insurance
+        policy includes a copayment, or a small fee collected at the time of the appointment, the patient should be
+        informed of the amount they will have to pay. Some offices collect copayments before the patient receives
+        medical services.</p>
+
+      <strong>Features</strong>
+      <ul>
+        <li>
+          insert insurance details
+        </li>
+        <li>
+          Grab details from card (ie scan, ocr)
+        </li>
+        <li>
+          ability to print copy of verification
+        </li>
+        <li>
+          determine costs for patient, and notify patient of their costs before work is done.
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

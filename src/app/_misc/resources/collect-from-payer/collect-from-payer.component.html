@@ -1,0 +1,149 @@
+<div class="d-flex flex-column">
+  <div class="row align-items-center bg-primary check-contrast py-4">
+    <div class="col-xl-9 col-lg-11 container-alt text-light toggles-ignore mx-auto py-5">
+      <div class="row py-2">
+        <div class="col-xl-7 col-lg-8 py-2 text-center text-lg-left">
+          <h1 class="display-4 mb-0">
+            <span>{{step.title}}</span>
+          </h1>
+
+          <p class="lead mb-3">
+            <span>{{step.desc}}</span>
+          </p>
+
+          <p class="small">
+            Looking for the software itself? Site will be released
+            <a class="toggles-ignore text-light" [routerLink]="['/']">
+              <u>Here</u>
+            </a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row align-items-center check-contrast py-5">
+    <div class="col-xl-9 col-lg-11 container-alt toggles-ignore mx-auto">
+      <p>This last step involves posting and deposit functions. At this point, the amount billed to the patient will be
+        zero
+        if it has been paid in full or it will reflect the amount owed by the patient. The insurance payer's
+        responsibility
+        should have been met by this step in the process.</p>
+
+      <p>Once a claim reaches a payer, it undergoes a process called adjudication. In adjudication, a payer evaluates a
+        medical claim and decides whether the claim is valid/compliant and, if so, how much of the claim the payer will
+        reimburse the provider for. It’s at this stage that a claim may be accepted, denied, or rejected.</p>
+
+      <p>A quick word about these terms. An accepted claim is, obviously, one that has been found valid by the payer.
+        Accepted
+        does not necessarily mean that the payer will pay the entirety of the bill. Rather, they will process the claim
+        within
+        the rules of the arrangement they have with their subscriber (the patient).</p>
+
+      <p>A rejected claim is one that the payer has found some error with. If a claim is missing important patient
+        information, or if there is a miscoded procedure or diagnosis, the claim will be rejected, and will be returned
+        to
+        the
+        provider/biller. In the case of rejected claims, the biller may correct the claim and resubmit it.</p>
+
+      <p>A denied claim is one that the payer refuses to process payment for the medical services rendered. This may
+        occur
+        when a provider bills for a procedure that is not included in a patient’s insurance coverage. This might include
+        a
+        procedure for a pre-existing condition (if the insurance plan does not cover such a procedure).</p>
+
+      <p>Once the payer adjudication is complete, the payer will send a report to the provider/biller, detailing what
+        and
+        how
+        much of the claim they are willing to pay and why. This report will list the procedures the payer will cover and
+        the
+        amount payer has assigned for each procedure. This often differs from the fees listed in the initial claim. The
+        payer
+        usually has a contract with the provider that stipulates the fees and reimbursement rates for a number of
+        procedures.
+        The report will also provide explanations as to why certain procedures will not be covered by the payer.</p>
+
+      <p>(If the patient has secondary insurance, the biller takes the amount left over after the primary insurance
+        returns
+        the approved claim and sends it to the patient’s secondary insurance).</p>
+
+      <p>The biller reviews this report in order to make sure all procedures listed on the initial claim are accounted
+        for
+        in
+        the report. They will also check to make sure the codes listed on the payer’s report match those of the initial
+        claim.
+        Finally, the biller will check to make sure the fees in the report are accurate with regard to the contract
+        between
+        the payer and the provider.</p>
+
+      <p>If there are any discrepancies, the biller/provider will enter into an appeal process with the payer. This
+        process
+        is
+        complicated and depends on rules that are specific to payers and to the states in which a provider is located.
+        Effectively, a claims appeal is the process by which a provider attempts to secure the proper reimbursement for
+        their
+        services. This can be a long and arduous process, which is why it’s imperative that billers create accurate,
+        “clean”
+        claims on the first go.</p>
+
+      <p>When a payer (usually the insurance provider) receives an insurance claim from a clearinghouse or the
+        healthcare
+        provider directly, the claim is reviewed through a process called adjudication. During adjudication, the
+        insurance
+        provider puts the claim through a number of different steps, considering various factors, in order to evaluate
+        the
+        bill. Here, the insurance provider determines whether they will pay the entire bill, a portion of the bill, or
+        if
+        they
+        will deny the bill outright. The amount the insurance provider pays is based on the policy held by the patient
+        and
+        its
+        contract with the medical practice.</p>
+
+      <p>After the claim goes through adjudication, the decision to pay all, some, or none of the bill is sent back to
+        the
+        healthcare provider in the form of a report. If the insurance provider decided not to cover the entire bill, the
+        first
+        step of the medical biller is to determine whether or not more than one insurance provider covers the patient.
+        If
+        the
+        patient is covered by additional insurance plans, the medical biller sends a claim for the remaining bill is
+        sent to
+        this second payer.</p>
+
+      <p>Another major step for the medical biller is to confirm that the charges and fees match up between medical
+        practice
+        and insurance company. It is rare that fees for both parties match up perfectly. Again, the amount reimbursed to
+        the
+        healthcare provider is based on the agreement they have with the individual insurance company. Medical billers
+        evaluate each payment made by the insurance provider to confirm a number of factors.</p>
+
+      <p>First, the medical biller should check to see if all procedures listed on insurance claim sent out by the
+        healthcare
+        provider also appear on the statement received from the insurance company. Similarly, all codes included in the
+        claim
+        must also appear identical in the insurer’s payment transaction. If all procedures match, and the codes for
+        these
+        procedures are identical, the medical biller reviews the payments for each procedure. Each payment should be in
+        accordance with the contract between healthcare provider and payer. If the insurance provider opted not to pay
+        for
+        certain procedures, these unpaid charges should be explained in full on the report.</p>
+
+      <p>If any discrepancies are found in the transaction, the healthcare provider must enter into an appeal process.
+        This
+        process includes different rules and regulations depending on the state and the insurance contract. In the end,
+        it
+        is
+        crucial that the provider receives the maximum appropriate reimbursement as agreed upon between the practice and
+        the
+        payer.</p>
+
+      <p>After payment is received by the insurance provider, review the remittance advice (RA) to make sure the correct
+        amount was paid.</p>
+
+      <p>Monitoring the claims and initiating follow-ups with the insurance company through mails and phone calls. It
+        also
+        involves receiving timely updates on the claim submitted.</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+
+
+
+
+
+<div style="height:100%;background-color: #f1f1f1" fxLayout="column" fxLayoutAlign="center center">
+
+  <mat-icon>lock</mat-icon>
+
+  <mat-card style="padding: 50px;margin:2rem 0;width:300px;">
+    <mat-card-content fxLayout="column">
+      <mat-form-field>
+        <input matInput placeholder="username" type="text">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Enter your password" type="password">
+      </mat-form-field>
+
+      <button color="accent" (click)="login()" mat-raised-button>LOGIN</button>
+
+    </mat-card-content>
+  </mat-card>
+
+  <small>Don't have an account? <a routerLink="/register">Register here</a></small>
+</div>
+
+
+<!--<div class="container h-100">-->
+<!--<div class="row h-100 justify-content-center align-items-center flex-column">-->
+<!---->
+<!--<img src="assets/images/logo.png" height="100" class="mb-5">-->
+<!---->
+<!--<div class="card">-->
+<!--<div class="card-body d-flex flex-column" style="padding: 3rem">-->
+<!--<form>-->
+<!--<div class="form-group">-->
+<!--<input type="text" class="form-control form-control-lg" placeholder="email">-->
+<!--</div>-->
+<!--<div class="form-group">-->
+<!--<input type="text" class="form-control form-control-lg" placeholder="password">-->
+<!--</div>-->
+
+<!--<button type="submit" class="btn btn-primary btn-lg w-100" style="background: #7898B1" (click)="login()">Log in</button>-->
+
+<!--<div class="text-center mt-3" style="color:#A9A9A9">-->
+<!--<span>Not registered? <a routerLink="/register">Create an Account</a></span>-->
+<!--</div>-->
+<!--</form>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->

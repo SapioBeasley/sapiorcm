@@ -1,0 +1,115 @@
+<div class="d-flex flex-column">
+  <div class="row align-items-center bg-primary check-contrast py-4">
+    <div class="col-xl-9 col-lg-11 container-alt text-light toggles-ignore mx-auto py-5">
+      <div class="row py-2">
+        <div class="col-xl-7 col-lg-8 py-2 text-center text-lg-left">
+          <h1 class="display-4 mb-0">
+            <span>{{step.title}}</span>
+          </h1>
+
+          <p class="lead mb-3">
+            <span>{{step.desc}}</span>
+          </p>
+
+          <p class="small">
+            Looking for the software itself? Site will be released
+            <a class="toggles-ignore text-light" [routerLink]="['/']">
+              <u>Here</u>
+            </a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row align-items-center check-contrast py-5">
+    <div class="col-xl-9 col-lg-11 container-alt toggles-ignore mx-auto">
+      <p>The insurance company (payer) processes the claims usually by medical claims examiners or medical claims
+        adjusters.
+        For higher dollar amount claims, the insurance company has medical directors review the claims and evaluate
+        their
+        validity for payment using rubrics (procedure) for patient eligibility, provider credentials, and medical
+        necessity.
+        Approved claims are reimbursed for a certain percentage of the billed services. These rates are pre-negotiated
+        between
+        the health care provider and the insurance company. Failed claims are denied or rejected and notice is sent to
+        provider. Most commonly, denied or rejected claims are returned to providers in the form of Explanation of
+        Benefits
+        (EOB) or Electronic Remittance Advice.</p>
+
+      <p>In case of the denial of the claim, the provider reconciles the claim with the original one, makes necessary
+        rectifications and resubmits the claim.This exchange of claims and denials may be repeated multiple times until
+        a
+        claim is paid in full, or the provider relents and accepts an incomplete reimbursement.</p>
+
+      <p>There is a difference between a “denied” and a “rejected” claim, although the terms are commonly interchanged.
+        A
+        denied claim refers to a claim that has been processed and the insurer has found it to be not payable. A denied
+        claim
+        can usually be corrected and/or appealed for reconsideration. Insurers have to tell you why they’ve denied your
+        claim
+        and they have to let you know how you can dispute their decisions. A rejected claim refers to a claim that has
+        not
+        been processed by the insurer due to a fatal error in the information provided. Common causes for a claim to
+        reject
+        include when personal information is inaccurate (i.e.: name and identification number do not match) or errors in
+        information provided (i.e.: truncated procedure code, invalid diagnosis codes, etc.) A rejected claim has not
+        been
+        processed so it cannot be appealed. Instead, rejected claims need to be researched, corrected and
+        resubmitted.</p>
+
+      <p>A practice that has interactions with the patient must now under HIPAA send most billing claims for services
+        via
+        electronic means. Prior to actually performing service and billing a patient, the care provider may use software
+        to
+        check the eligibility of the patient for the intended services with the patient's insurance company. This
+        process
+        uses
+        the same standards and technologies as an electronic claims transmission with small changes to the transmission
+        format, this format is known specifically as X12-270 Health Care Eligibility & Benefit Inquiry transaction. A
+        response to an eligibility request is returned by the payer through a direct electronic connection or more
+        commonly
+        their website. This is called an X12-271 "Health Care Eligibility & Benefit Response" transaction. Most practice
+        management/EM software will automate this transmission, hiding the process from the user.</p>
+
+      <p>How often are claims denied for services rendered out of your facility? If your quarterly reports are showing a
+        downturn in revenue because of too many denied claims, it’s time to investigate the matter. Properly executed
+        denial
+        management will boost earnings if money has lately been slow because of problematic claims.</p>
+
+      <p>Including this process of denial management in your cycle can help you recover revenue that might otherwise
+        have
+        remained overlooked because of insurance being filed incorrectly. You might uncover patterns, such as more
+        denied
+        claims when certain people are working together (or actually not working very hard when they are scheduled on
+        the same
+        shift) or billing problems for certain types of procedures or members of your patient population.</p>
+
+      <p>Rechecking the insurance documents and coordinating with the insurance company in case of any unpaid or
+        rejected
+        claims.</p>
+
+      <strong>Features</strong>
+      <ul>
+        <li>
+          generate x12-270 format of patient insurance info
+        </li>
+        <li>
+          Check patient eligibility response x12-271
+        </li>
+        <li>
+          Receive payer decision
+        </li>
+        <li>
+          Determine decision result
+        </li>
+        <li>
+          Resubmit if denied
+        </li>
+        <li>
+          collect if paid
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

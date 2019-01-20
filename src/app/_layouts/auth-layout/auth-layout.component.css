@@ -1,0 +1,23 @@
+/*html, body {*/
+  /*background-color: #733649 !important;*/
+/*}*/
+
+/*input[type=text] {*/
+  /*background-color: #E8E8E8;*/
+  /*border-radius: 2px;*/
+/*}*/
+
+/*input[type=text]::placeholder {*/
+  /*color: #A9A9A9;*/
+  /*text-transform: lowercase;*/
+/*}*/
+
+/*button[type=submit] {*/
+  /*text-transform: uppercase;*/
+/*}*/
+
+/*button[type=submit], input[type=text]::placeholder {*/
+  /*font-size: 1rem;*/
+  /*border-radius: 2px;*/
+  /*border-color: #7898B1;*/
+/*}*/

@@ -1,0 +1,83 @@
+<mat-toolbar [class.mat-elevation-z1]="true">
+  <mat-toolbar-row fxLayoutAlign="center center">
+    <button (click)="isExpanded = !isExpanded" mat-icon-button style="margin: 0 14px 0 0">
+      <!--<button (click)="sidenav.toggle()" mat-icon-button style="margin: 0 14px 0 0">-->
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>MedBill</span>
+    <span fxFlex></span>
+    <img src="http://i.pravatar.cc/45" style="border-radius: 100%;margin-right:.5rem">
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container class="example-container" autosize>
+  <mat-sidenav fxLayout="column" #sidenav mode="side" [fixedInViewport]="true" [fixedTopGap]="64" [opened]="true">
+    <!--<mat-nav-list>-->
+    <!--<h3 matSubheader>Patient</h3>-->
+    <!--&lt;!&ndash;<a mat-list-item [routerLink]="['/check-in']">&ndash;&gt;-->
+    <!--&lt;!&ndash;<mat-icon mat-list-icon>list_alt</mat-icon>&ndash;&gt;-->
+    <!--&lt;!&ndash;<h4 mat-line>Check In</h4>&ndash;&gt;-->
+    <!--&lt;!&ndash;<p mat-line>Check the patient in</p>&ndash;&gt;-->
+    <!--&lt;!&ndash;</a>&ndash;&gt;-->
+
+    <!--<a mat-list-item [routerLink]="['/eligibility']">-->
+    <!--<mat-icon mat-list-icon>list_alt</mat-icon>-->
+    <!--<h4 mat-line>Eligibility</h4>-->
+    <!--<p mat-line>Verify Patient Eligibility</p>-->
+    <!--</a>-->
+
+    <!--&lt;!&ndash;<a mat-list-item [routerLink]="['/check-out']">&ndash;&gt;-->
+    <!--&lt;!&ndash;<mat-icon mat-list-icon>list_alt</mat-icon>&ndash;&gt;-->
+    <!--&lt;!&ndash;<h4 mat-line>Check Out</h4>&ndash;&gt;-->
+    <!--&lt;!&ndash;<p mat-line>Check the patient out</p>&ndash;&gt;-->
+    <!--&lt;!&ndash;</a>&ndash;&gt;-->
+
+    <!--<a mat-list-item>-->
+    <!--<mat-icon mat-list-icon>assignment</mat-icon>-->
+    <!--<h4 mat-line>Denials</h4>-->
+    <!--<p mat-line>List of all current denials</p>-->
+    <!--</a>-->
+
+    <!--<a mat-list-item [routerLink]="['/prepare-claim']">-->
+    <!--<mat-icon mat-list-icon>assignment</mat-icon>-->
+    <!--<h4 mat-line>List</h4>-->
+    <!--<p mat-line>List of all claims past and current</p>-->
+    <!--</a>-->
+    <!--</mat-nav-list>-->
+
+    <!--<mat-divider></mat-divider>-->
+
+    <mat-nav-list fxLayout="column">
+      <mat-list-item [routerLink]="['/eligibility']">
+        <mat-icon mat-list-icon>contact_mail</mat-icon>
+        <p matLine *ngIf="isExpanded">Eligibility</p>
+      </mat-list-item>
+
+      <mat-list-item [routerLink]="['/prepare-claim']">
+        <mat-icon mat-list-icon>assignment</mat-icon>
+        <p matLine *ngIf="isExpanded">Prepare Claim</p>
+      </mat-list-item>
+
+      <mat-list-item [routerLink]="['/settings']">
+        <mat-icon mat-list-icon>settings</mat-icon>
+        <p matLine *ngIf="isExpanded">Settings</p>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav opened mode="side" position="end" [fixedInViewport]="true" [fixedTopGap]="64" [opened]="true">
+    <mat-list>
+      <mat-list-item>
+        <img matListAvatar src="http://i.pravatar.cc/45" alt="...">
+        <h3 matLine> jfjkfdjkfdjkf </h3>
+        <p matLine>
+          <span> lkdlkfdklfdklfdklfkdl </span>
+        </p>
+      </mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="mat-typography">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

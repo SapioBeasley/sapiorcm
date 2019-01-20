@@ -1,0 +1,38 @@
+Test NPI: 1134380470
+
+<form [formGroup]="settingsForm" (ngSubmit)="setNpi()">
+  <input formControlName="npi">
+</form>
+
+<ng-template [ngIf]="providerData">
+  <div *ngFor="let provider of providerData.results">
+
+    <div class="d-flex flex-row justify-content-between">
+      {{provider.basic.status === 'A'}}
+      <i class="fa fa-circle" [ngClass]="{'text-success': provider.basic.status === 'A', 'text-danger': provider.basic.status === 'I'}"></i>
+
+      <p>NPI: </p> {{provider.number}}
+      <p>License: </p> {{provider.taxonomies.license}}
+    </div>
+    <p>Organization Name: </p> {{provider.basic.organization_name}}
+    <p>Practice: </p> {{provider.taxonomies.desc}}
+    <p>Last Updated: </p> {{provider.basic.last_updated}}
+
+    <p>Credential: </p> {{provider.basic.credential}}
+    <p>First Name: </p> {{provider.basic.first_name}}
+    <p>Last Name: </p> {{provider.basic.last_name}}
+
+
+    <p>Authorized Person prefix: </p> {{provider.basic.authorized_official_name_prefix}}
+    <p>Authorized Person Last Name: </p> {{provider.basic.authorized_official_first_name}}
+    <p>Authorized Person Last Name: </p> {{provider.basic.authorized_official_last_name}}
+    <p>Authorized Person Title/Position: </p> {{provider.basic.authorized_official_title_or_position}}
+    <p>Authorized Phone: </p> {{provider.basic.authorized_official_telephone_number}}
+
+    <pre>{{provider | json}}</pre>
+
+    <div *ngFor="let address of provider.addresses">
+      <pre>{{address | json}}</pre>
+    </div>
+  </div>
+</ng-template>

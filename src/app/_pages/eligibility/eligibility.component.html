@@ -1,0 +1,249 @@
+<section fxLayout="row" fxLayoutAlign="center start" style="background: #f1f1f1;" *ngIf="!eligibility">
+  <div style="margin: 5rem 1rem" fxLayout="column">
+    <h1>
+      Eligibility
+    </h1>
+
+    <form [formGroup]="eligibilityForm" (ngSubmit)="getEligibility()">
+      <mat-card style="padding: 50px;margin:1rem 0 3rem 0;">
+        <mat-card-content fxLayout="column">
+          <div formGroupName="member">
+            <h1>Member</h1>
+
+            <mat-form-field fxFlexFill>
+              <input matInput placeholder="First Name" type="text" formControlName="first_name" required>
+            </mat-form-field>
+
+            <mat-form-field fxFlexFill>
+              <input matInput placeholder="Last Name" type="text" formControlName="last_name" required>
+            </mat-form-field>
+
+            <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="1rem">
+              <mat-form-field fxFlex="1 1">
+                <input matInput placeholder="Member ID" type="text" formControlName="id" required>
+              </mat-form-field>
+
+              <mat-form-field fxFlex="1 1">
+                <input matInput placeholder="Birth Date" type="text" formControlName="birth_date" required>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div formGroupName="provider">
+            <h1>Provider</h1>
+
+            <mat-form-field fxFlexFill>
+              <input matInput placeholder="First Name" type="text" formControlName="first_name" required>
+            </mat-form-field>
+
+            <mat-form-field fxFlexFill>
+              <input matInput placeholder="Last Name" type="text" formControlName="last_name" required>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput placeholder="NPI" type="text" formControlName="npi" required>
+            </mat-form-field>
+          </div>
+
+          <mat-form-field>
+            <input matInput placeholder="Trading Partner" type="text" formControlName="trading_partner_id" required>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-chip-list #chipList>
+              <mat-chip *ngFor="let type of eligibilityForm.get('service_types').controls; let i = index;"
+                        [selectable]="true"
+                        [removable]="true" (removed)="remove(i)">
+                {{type.value}}
+                <mat-icon matChipRemove *ngIf="true">cancel</mat-icon>
+              </mat-chip>
+              <input placeholder="ServiceTypes"
+                     [matChipInputFor]="chipList"
+                     [matChipInputSeparatorKeyCodes]="seperators"
+                     [matChipInputAddOnBlur]="true"
+                     (matChipInputTokenEnd)="add($event)">
+            </mat-chip-list>
+          </mat-form-field>
+
+          <button color="accent" (click)="getEligibility()" mat-raised-button fxFlex="row" fxLayoutAlign="center"
+                  [disabled]="!eligibilityForm.valid" style="margin-top: 1rem">
+            <mat-spinner diameter="20" style="margin: .5rem" *ngIf="isLoading"></mat-spinner>
+
+            <span *ngIf="!isLoading">Eligibility</span>
+          </button>
+        </mat-card-content>
+      </mat-card>
+    </form>
+  </div>
+</section>
+
+
+<section fxLayout="row" fxLayoutAlign="center start" style="background: #f1f1f1;" *ngIf="eligibility">
+  <div style="margin: 5rem 1rem" fxLayout="column">
+    <h1>
+      Coverage Status: <span *ngIf="coverage"> {{coverage.active ? 'Active' : 'Not Active'}}</span>
+    </h1>
+
+    <div fxLayout="row" fxLayoutGap="1rem" style="margin-bottom: 1rem">
+      <mat-card fxFlex>
+        <mat-card-title>
+          Payer
+        </mat-card-title>
+
+        <mat-card-content>
+          <div *ngFor="let entity of benefitRelatedEntities" fxLayoutGap="1rem" style="margin-bottom: 1rem">
+            <!--<ng-template [ngIf]="entity.eligibility_or_benefit_information !== 'inactive'">-->
+              <div><strong>{{entity.entity_identifier_code}} Name: </strong>{{entity.organization_name}}</div>
+
+              <div *ngIf="entity.address">
+                <strong>Address: </strong>{{entity.address.address_lines[0]}} {{entity.address.city}} {{entity.address.state}} {{entity.address.zipcode}}
+              </div>
+
+              <div><strong>Eligibility or Benefit Information: </strong>{{entity.eligibility_or_benefit_information}}</div>
+
+              <div fxLayout="row" fxLayoutGap="2rem">
+                <div><strong>Service Types: </strong>{{entity.service_types}}</div>
+                <div><strong>Benefit Amount: </strong>{{entity.benefit_amount.amount | currency}}</div>
+              </div>
+            <!--</ng-template>-->
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card fxFlex>
+        <mat-card-title>
+          Subscriber
+        </mat-card-title>
+        <mat-card-content>
+          <div><strong>Name: </strong>{{subscriber.first_name}} {{subscriber.last_name}}</div>
+          <div>
+            <strong>Address: </strong>{{subscriber.address.address_lines[0]}} {{subscriber.address.city}} {{subscriber.address.state}} {{subscriber.address.zipcode}}
+          </div>
+
+          <div fxLayout="row" fxLayoutGap="2rem">
+            <div><strong>DOB: </strong>{{subscriber.birth_date}}</div>
+            <div><strong>Gender: </strong>{{subscriber.gender}}</div>
+          </div>
+
+          <div fxLayout="row" fxLayoutGap="2rem">
+            <div><strong>ID: </strong>{{subscriber.id}}</div>
+            <div><strong>Group Number: </strong>{{subscriber.group_number}}</div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <h1>Coverage Details</h1>
+    
+    <mat-card fxFlex>
+      <mat-card-content>
+        <div fxLayout="row" fxLayoutGap="2rem">
+          <div><strong>Eligibility Begin Date: </strong>{{coverage.eligibility_begin_date}}</div>
+          <div><strong>Plan Begin Date: </strong>{{coverage.plan_begin_date}}</div>
+          <div><strong>Service Date: </strong>{{coverage.service_date}}</div>
+          <div><strong>Pharmacy Access: </strong>{{pharmacy.is_eligible}}</div>
+        </div>
+
+        <div fxLayout="row" fxLayoutGap="2rem">
+          <div><strong>Insurance Type: </strong>{{coverage.insurance_type}}</div>
+          <div><strong>Plan Description: </strong>{{coverage.plan_description}}</div>
+          <div><strong>Plan Active: </strong>{{coverage.active}}</div>
+          <div><strong>Plan Number: </strong>{{coverage.plan_number}}</div>
+          <div><strong>Group Description: </strong>{{coverage.group_description}}</div>
+          <div><strong>Coverage Level: </strong>{{coverage.level}}</div>
+        </div>
+
+        <div><strong>Service Types: </strong>{{coverage.service_types}}</div>
+
+        <h3 style="margin-top: 2rem">Plans</h3>
+        <div *ngFor="let plan of coverage.plans" fxLayout="row" fxLayoutGap="2rem">
+          <div><strong>Plan Description: </strong>{{plan.plan_description}}</div>
+          <div><strong>Plan Number: </strong>{{plan.plan_number}}</div>
+          <div><strong>Group Description: </strong>{{plan.group_description}}</div>
+          <div><strong>Grop Number: </strong>{{plan.group_number}}</div>
+          <div><strong>Insurance Type: </strong>{{plan.insurance_type}}</div>
+        </div>
+
+        <h3 style="margin-top: 2rem">Coinsurance</h3>
+        <div *ngFor="let coinsurance of coverage.coinsurance" fxLayout="column" style="margin-bottom:1rem">
+          <div fxLayout="row" fxLayoutGap="2rem">
+            <div><strong>Coverage Level:</strong> {{coinsurance.coverage_level}}</div>
+            <div><strong>Plan Description:</strong> {{coinsurance.plan_description}}</div>
+            <div><strong>Benefit Percent:</strong> {{coinsurance.benefit_percent}}</div>
+            <div><strong>In Plan Network:</strong> {{coinsurance.in_plan_network}}</div>
+            <div><strong>Service Types:</strong> {{coinsurance.service_types}}</div>
+          </div>
+
+          <div fxLayout="row wrap" fxLayoutGap="1rem">
+            <div *ngFor="let coinsuranceMessage of coinsurance.messages">
+              <span>{{coinsuranceMessage.message}}</span>
+            </div>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 2rem">Copay</h3>
+        <div *ngFor="let message of coverage.copay" fxLayout="column" style="margin-bottom:1rem">
+          <div fxLayout="row" fxLayoutGap="2rem">
+            <div><strong>Plan Description: </strong>{{message.plan_description}}</div>
+            <div><strong>In Plan network: </strong>{{message.in_plan_network}}</div>
+            <div><strong>Coverage Level: </strong>{{message.coverage_level}}</div>
+            <div><strong>Amount: </strong>{{message.copayment.amount | currency}}</div>
+          </div>
+
+          <div><strong>Service Types: </strong>{{message.service_types}}</div>
+
+          <div fxLayout="row wrap" fxLayoutGap="1rem">
+            <div *ngFor="let message of message.messages">
+              {{message.message}}
+            </div>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 2rem">deductible</h3>
+        <div *ngFor="let deductible of coverage.deductibles" fxLayout="column" style="margin-bottom: 1rem">
+          <div fxLayout="row" fxLayoutGap="2rem">
+            <div><strong>Eligibility Date: </strong>{{deductible.eligibility_date}}</div>
+            <div><strong>Plan Description: </strong>{{deductible.plan_description}}</div>
+            <div><strong>In plan network: </strong>{{deductible.in_plan_network}}</div>
+            <div><strong>Coverage Level: </strong>{{deductible.coverage_level}}</div>
+            <div><strong>Benefit Amount: </strong>{{deductible.benefit_amount.amount}}</div>
+            <div><strong>Service Types: </strong>{{deductible.service_types}}</div>
+            <div><strong>Time Period: </strong>{{deductible.time_period}}</div>
+          </div>
+          <div fxLayout="row wrap" fxLayoutGap="1rem">
+            <div *ngFor="let deductibleMessage of deductible.messages">
+              <span>{{deductibleMessage.message}}</span>
+            </div>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 2rem">Out of Pocket</h3>
+        <div *ngFor="let outOfPocket of coverage.out_of_pocket" fxLayout="column" style="margin-bottom: 1rem">
+          <div fxLayout="row" fxLayoutGap="2rem">
+            <div><strong>Plan Description: </strong>{{outOfPocket.plan_description}}</div>
+            <div><strong>In plan network: </strong>{{outOfPocket.in_plan_network}}</div>
+            <div><strong>Coverage Level: </strong>{{outOfPocket.coverage_level}}</div>
+            <div><strong>Benefit Amount: </strong>{{outOfPocket.benefit_amount.amount}}</div>
+            <div><strong>Time Period: </strong>{{outOfPocket.time_period}}</div>
+            <div><strong>Service Types:</strong> {{outOfPocket.service_types}}</div>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 2rem">Limitations</h3>
+        <div *ngFor="let limitation of coverage.limitations" fxLayout="column" style="margin-bottom: 1rem">
+          <div fxLayout="row" fxLayoutGap="2rem">
+            <div><strong>Plan Description: </strong>{{limitation.plan_description}}</div>
+            <div><strong>Coverage Level: </strong>{{limitation.coverage_level}}</div>
+            <div><strong>Service Types:</strong> {{limitation.service_types}}</div>
+          </div>
+
+          <div fxLayout="row wrap" fxLayoutGap="1rem">
+            <div *ngFor="let limitationMessage of limitation.messages">
+              <span>{{limitationMessage.message}}</span>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</section>

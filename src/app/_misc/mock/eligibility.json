@@ -1,0 +1,642 @@
+{
+  "data": {
+    "coverage": {
+      "eligibility_begin_date": "2012-02-01",
+      "plan_begin_date": "2013-02-15",
+      "service_date": "2013-08-10",
+      "insurance_type": "ppo",
+      "plan_description": "Open Choice",
+      "active": true,
+      "plan_number": "0888188",
+      "group_number": "088818801000013",
+      "group_description": "MOCK INDIVIDUAL ADVANTAGE PLAN",
+      "coinsurance": [
+        {
+          "messages": [
+            {
+              "message": "GYN OFFICE VS"
+            },
+            {
+              "message": "GYN VISIT"
+            },
+            {
+              "message": "SPEC OFFICE"
+            },
+            {
+              "message": "SPEC VISIT"
+            },
+            {
+              "message": "PRIMARY OFFICE"
+            },
+            {
+              "message": "PRIME CARE VST"
+            }
+          ],
+          "plan_description": "Open Choice",
+          "service_types": [
+            "professional_physician_visit_office"
+          ],
+          "benefit_percent": 0,
+          "in_plan_network": "yes",
+          "coverage_level": "employee_and_spouse"
+        },
+        {
+          "messages": [
+            {
+              "message": "GYN OFFICE VS,COINS APPLIES TO OUT OF POCKET"
+            },
+            {
+              "message": "GYN VISIT,COINS APPLIES TO OUT OF POCKET"
+            },
+            {
+              "message": "SPEC OFFICE,COINS APPLIES TO OUT OF POCKET"
+            },
+            {
+              "message": "SPEC VISIT,COINS APPLIES TO OUT OF POCKET"
+            },
+            {
+              "message": "PRIME CARE VST,COINS APPLIES TO OUT OF POCKET"
+            }
+          ],
+          "plan_description": "Open Choice",
+          "service_types": [
+            "professional_physician_visit_office"
+          ],
+          "benefit_percent": 0.5,
+          "in_plan_network": "no",
+          "coverage_level": "employee_and_spouse"
+        }
+      ],
+      "contacts": [
+        {
+          "contact_type": "payer",
+          "name": "Aetna",
+          "address": {
+            "city": "Lexington",
+            "zipcode": "40512",
+            "state": "KY",
+            "address_lines": [
+              "PO Box 14079"
+            ]
+          }
+        }
+      ],
+      "copay": [
+        {
+          "messages": [
+            {
+              "message": "PRIMARY OFFICE"
+            }
+          ],
+          "plan_description": "Open Choice",
+          "service_types": [
+            "professional_physician_visit_office"
+          ],
+          "in_plan_network": "yes",
+          "coverage_level": "employee_and_spouse",
+          "copayment": {
+            "amount": "20",
+            "currency": "USD"
+          }
+        },
+        {
+          "messages": [
+            {
+              "message": "GYN OFFICE VS"
+            },
+            {
+              "message": "GYN VISIT"
+            },
+            {
+              "message": "SPEC OFFICE"
+            },
+            {
+              "message": "SPEC VISIT"
+            },
+            {
+              "message": "PRIME CARE VST"
+            }
+          ],
+          "plan_description": "Open Choice",
+          "service_types": [
+            "professional_physician_visit_office"
+          ],
+          "in_plan_network": "not_applicable",
+          "coverage_level": "employee_and_spouse",
+          "copayment": {
+            "amount": "30",
+            "currency": "USD"
+          }
+        }
+      ],
+      "deductibles": [
+        {
+          "messages": [
+            {
+              "message": "INT MED AND RX,GYN OFFICE VS,DED INCLUDED IN OOP,GYN VISIT,SPEC OFFICE,SPEC VISIT,PRIMARY OFFICE,PRIME CARE VST"
+            }
+          ],
+          "eligibility_date": "2013-01-01",
+          "plan_description": "Open Choice",
+          "in_plan_network": "yes",
+          "coverage_level": "family",
+          "time_period": "calendar_year",
+          "benefit_amount": {
+            "amount": "6000",
+            "currency": "USD"
+          },
+          "service_types": [
+            "health_benefit_plan_coverage"
+          ]
+        },
+        {
+          "messages": [
+            {
+              "message": "INT MED AND RX"
+            }
+          ],
+          "plan_description": "Open Choice",
+          "in_plan_network": "yes",
+          "coverage_level": "family",
+          "time_period": "remaining",
+          "benefit_amount": {
+            "amount": "5956.09",
+            "currency": "USD"
+          },
+          "service_types": [
+            "health_benefit_plan_coverage"
+          ]
+        },
+        {
+          "messages": [
+            {
+              "message": "INT MED AND RX,GYN OFFICE VS,DED INCLUDED IN OOP,GYN VISIT,SPEC OFFICE,SPEC VISIT,PRIMARY OFFICE,PRIME CARE VST"
+            }
+          ],
+          "eligibility_date": "2013-01-01",
+          "plan_description": "Open Choice",
+          "in_plan_network": "yes",
+          "coverage_level": "individual",
+          "time_period": "calendar_year",
+          "benefit_amount": {
+            "amount": "3000",
+            "currency": "USD"
+          },
+          "service_types": [
+            "health_benefit_plan_coverage"
+          ]
+
+        },
+        {
+          "messages": [
+            {
+              "message": "INT MED AND RX"
+            }
+          ],
+          "plan_description": "Open Choice",
+          "in_plan_network": "yes",
+          "coverage_level": "individual",
+          "time_period": "remaining",
+          "benefit_amount": {
+            "amount": "2983.57",
+            "currency": "USD"
+          },
+          "service_types": [
+            "health_benefit_plan_coverage"
+          ]
+        },
+        {
+          "messages": [
+            {
+              "message": "INT MED AND RX,GYN OFFICE VS,DED INCLUDED IN OOP,GYN VISIT,SPEC OFFICE,SPEC VISIT,PRIME CARE VST"
+            }
+          ],
+          "eligibility_date": "2013-01-01",
+          "plan_description": "Open Choice",
+          "in_plan_network": "no",
+          "coverage_level": "family",
+          "time_period": "calendar_year",
+          "benefit_amount": {
+            "amount": "12000",
+            "currency": "USD"
+          },
+          "service_types": [
+            "health_benefit_plan_coverage"
+          ]
+        },
+        {
+          "messages": [
+            {
+              "message": "INT MED AND RX"
+            }
+          ],
+          "plan_description": "Open Choice",
+          "in_plan_network": "no",
+          "coverage_level": "family",
+          "time_period": "remaining",
+          "benefit_amount": {
+            "amount": "11956.09",
+            "currency": "USD"
+          },
+          "service_types": [
+            "health_benefit_plan_coverage"
+          ]
+        },
+        {
+          "messages": [
+            {
+              "message": "INT MED AND RX,GYN OFFICE VS,DED INCLUDED IN OOP,GYN VISIT,SPEC OFFICE,SPEC VISIT,PRIME CARE VST"
+            }
+          ],
+          "eligibility_date": "2013-01-01",
+          "plan_description": "Open Choice",
+          "in_plan_network": "no",
+          "coverage_level": "individual",
+          "time_period": "calendar_year",
+          "benefit_amount": {
+            "amount": "6000",
+            "currency": "USD"
+          },
+          "service_types": [
+            "health_benefit_plan_coverage"
+          ]
+        },
+        {
+          "messages": [
+            {
+              "message": "INT MED AND RX"
+            }
+          ],
+          "plan_description": "Open Choice",
+          "in_plan_network": "no",
+          "coverage_level": "individual",
+          "time_period": "remaining",
+          "benefit_amount": {
+            "amount": "5983.57",
+            "currency": "USD"
+          },
+          "service_types": [
+            "health_benefit_plan_coverage"
+          ]
+        }
+      ],
+      "out_of_pocket": [
+        {
+          "plan_description": "Open Choice",
+          "in_plan_network": "yes",
+          "coverage_level": "individual",
+          "benefit_amount": {
+            "amount": "3000",
+            "currency": "USD"
+          },
+          "service_types": [
+            "health_benefit_plan_coverage"
+          ]
+        },
+        {
+          "plan_description": "Open Choice",
+          "in_plan_network": "yes",
+          "coverage_level": "individual",
+          "benefit_amount": {
+            "amount": "2983.57",
+            "currency": "USD"
+          },
+          "time_period": "remaining",
+          "service_types": [
+            "health_benefit_plan_coverage"
+          ]
+        },
+        {
+          "plan_description": "Open Choice",
+          "in_plan_network": "yes",
+          "coverage_level": "family",
+          "benefit_amount": {
+            "amount": "6000",
+            "currency": "USD"
+          },
+          "service_types": [
+            "health_benefit_plan_coverage"
+          ]
+        },
+        {
+          "plan_description": "Open Choice",
+          "in_plan_network": "yes",
+          "coverage_level": "family",
+          "benefit_amount": {
+            "amount": "5956.09",
+            "currency": "USD"
+          },
+          "time_period": "remaining",
+          "service_types": [
+            "health_benefit_plan_coverage"
+          ]
+        },
+        {
+          "plan_description": "Open Choice",
+          "in_plan_network": "no",
+          "coverage_level": "individual",
+          "benefit_amount": {
+            "amount": "12500",
+            "currency": "USD"
+          },
+          "service_types": [
+            "health_benefit_plan_coverage"
+          ]
+        },
+        {
+          "plan_description": "Open Choice",
+          "in_plan_network": "no",
+          "coverage_level": "individual",
+          "benefit_amount": {
+            "amount": "12483.57",
+            "currency": "USD"
+          },
+          "time_period": "remaining",
+          "service_types": [
+            "health_benefit_plan_coverage"
+          ]
+        },
+        {
+          "plan_description": "Open Choice",
+          "in_plan_network": "no",
+          "coverage_level": "family",
+          "benefit_amount": {
+            "amount": "25000",
+            "currency": "USD"
+          },
+          "service_types": [
+            "health_benefit_plan_coverage"
+          ]
+        },
+        {
+          "plan_description": "Open Choice",
+          "in_plan_network": "no",
+          "coverage_level": "family",
+          "benefit_amount": {
+            "amount": "24956.09",
+            "currency": "USD"
+          },
+          "time_period": "remaining",
+          "service_types": [
+            "health_benefit_plan_coverage"
+          ]
+        }
+      ],
+      "limitations": [
+        {
+          "messages": [
+            {
+              "message": "Unlimited Lifetime Benefits"
+            }
+          ],
+          "time_period_qualifier": "lifetime",
+          "plan_description": "Open Choice",
+          "coverage_level": "employee_and_spouse",
+          "service_types": [
+            "health_benefit_plan_coverage"
+          ]
+        },
+        {
+          "messages": [
+            {
+              "message": "Plan Requires PreCert"
+            }
+          ],
+          "plan_description": "Open Choice",
+          "coverage_level": "employee_and_spouse",
+          "in_plan_network": "not_applicable",
+          "service_types": [
+            "professional_physician_visit_office"
+          ]
+        },
+        {
+          "messages": [
+            {
+              "message": "Commercial"
+            },
+            {
+              "message": "Plan includes NAP"
+            },
+            {
+              "message": "Pre-Existing may apply"
+            }
+          ],
+          "plan_description": "Open Choice",
+          "coverage_level": "employee_and_spouse",
+          "service_types": [
+            "professional_physician_visit_office"
+          ]
+        }
+      ],
+      "service_types": [
+        "health_benefit_plan_coverage",
+        "professional_physician_visit_office"
+      ],
+      "level": "employee_and_spouse",
+      "plans": [
+        {
+          "plan_description": "Open Choice",
+          "plan_number": "0888188",
+          "group_description": "MOCK INDIVIDUAL ADVANTAGE PLAN",
+          "group_number": "088818801000013",
+          "insurance_type": "ppo"
+        }
+      ]
+    },
+    "payer": {
+      "id": "MOCKPAYER",
+      "name": "Aetna"
+    },
+    "provider": {
+      "first_name": "ELIZABETH",
+      "last_name": "BLACKWELL",
+      "npi": "1234567893"
+    },
+    "subscriber": {
+      "address": {
+        "city": "SPARTANBURG",
+        "zipcode": "29307",
+        "state": "SC",
+        "address_lines": [
+          "123 MAIN ST"
+        ]
+      },
+      "birth_date": "1970-01-25",
+      "gender": "unknown",
+      "first_name": "Janes",
+      "last_name": "Doe",
+      "id": "W000000000",
+      "group_number": "088818801000013"
+    },
+    "valid_request": true,
+    "trading_partner_id": "MOCKPAYER",
+    "service_types": [
+      "health_benefit_plan_coverage",
+      "professional_physician_visit_office"
+    ],
+    "summary": {
+      "deductible": {
+        "family": {
+          "in_network": {
+            "limit": {
+              "amount": "6000",
+              "currency": "USD"
+            },
+            "applied": {
+              "amount": "43.91",
+              "currency": "USD"
+            },
+            "remaining": {
+              "amount": "5956.09",
+              "currency": "USD"
+            }
+          },
+          "out_of_network": {
+            "limit": {
+              "amount": "12000",
+              "currency": "USD"
+            },
+            "applied": {
+              "amount": "43.91",
+              "currency": "USD"
+            },
+            "remaining": {
+              "amount": "11956.09",
+              "currency": "USD"
+            }
+          }
+        },
+        "individual": {
+          "in_network": {
+            "limit": {
+              "amount": "3000",
+              "currency": "USD"
+            },
+            "applied": {
+              "amount": "16.43",
+              "currency": "USD"
+            },
+            "remaining": {
+              "amount": "2983.57",
+              "currency": "USD"
+            }
+          },
+          "out_of_network": {
+            "limit": {
+              "amount": "6000",
+              "currency": "USD"
+            },
+            "applied": {
+              "amount": "16.43",
+              "currency": "USD"
+            },
+            "remaining": {
+              "amount": "5983.57",
+              "currency": "USD"
+            }
+          }
+        }
+      },
+      "out_of_pocket": {
+        "family": {
+          "in_network": {
+            "limit": {
+              "amount": "6000",
+              "currency": "USD"
+            },
+            "applied": {
+              "amount": "43.91",
+              "currency": "USD"
+            },
+            "remaining": {
+              "amount": "5956.09",
+              "currency": "USD"
+            }
+          },
+          "out_of_network": {
+            "limit": {
+              "amount": "25000",
+              "currency": "USD"
+            },
+            "applied": {
+              "amount": "43.91",
+              "currency": "USD"
+            },
+            "remaining": {
+              "amount": "24956.09",
+              "currency": "USD"
+            }
+          }
+        },
+        "individual": {
+          "in_network": {
+            "limit": {
+              "amount": "3000",
+              "currency": "USD"
+            },
+            "applied": {
+              "amount": "16.43",
+              "currency": "USD"
+            },
+            "remaining": {
+              "amount": "2983.57",
+              "currency": "USD"
+            }
+          },
+          "out_of_network": {
+            "limit": {
+              "amount": "12500",
+              "currency": "USD"
+            },
+            "applied": {
+              "amount": "16.43",
+              "currency": "USD"
+            },
+            "remaining": {
+              "amount": "12483.57",
+              "currency": "USD"
+            }
+          }
+        }
+      }
+    },
+    "pharmacy": {
+      "is_eligible": false
+    },
+    "originating_company_id": "1453915417",
+    "trace_number": "1",
+    "benefit_related_entities": [
+      {
+        "entity_identifier_code": "payer",
+        "entity_type": "organization",
+        "organization_name": "Aetna",
+        "address": {
+          "city": "Lexington",
+          "zipcode": "40512",
+          "state": "KY",
+          "address_lines": [
+            "PO Box 14079"
+          ]
+        },
+        "eligibility_or_benefit_information": "other_source_of_data",
+        "benefit_amount": {
+          "amount": "0",
+          "currency": "USD"
+        }
+      },
+      {
+        "entity_identifier_code": "payer",
+        "entity_type": "organization",
+        "organization_name": "HSA Open Access MC",
+        "eligibility_or_benefit_information": "inactive",
+        "service_types": [
+          "health_benefit_plan_coverage"
+        ],
+        "benefit_amount": {
+          "amount": "0",
+          "currency": "USD"
+        }
+      }
+    ]
+  }
+}

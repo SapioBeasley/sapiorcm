@@ -1,0 +1,117 @@
+<section fxLayout="row" fxLayoutAlign="center start" style="background: #f1f1f1;">
+  <div style="width: 55%;margin-top: 5rem" fxLayout="column">
+    <h1>
+      Prepare Claim
+    </h1>
+
+    <form [formGroup]="claimsForm" fxLayout="column">
+      <mat-card style="margin:1rem 0 3rem 0;" fxFlex="1 2">
+        <mat-card-content fxLayout="column">
+          <div formGroupName="patient">
+            <h3>Patient Information</h3>
+
+            <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="1rem">
+              <mat-form-field fxFlex="1 1">
+                <input matInput placeholder="First Name" type="text" formControlName="firstName" required>
+              </mat-form-field>
+
+              <mat-form-field fxFlex="1 1">
+                <input matInput placeholder="Last Name" type="text" formControlName="lastName" required>
+              </mat-form-field>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <div formArrayName="codes">
+        <div fxLayout="row" fxLayoutAlign="space-between start">
+          <h3>Line Items</h3>
+
+          <button (click)="addCode()" mat-button>Add Another Code</button>
+        </div>
+
+
+        <div *ngFor="let code of codes.controls; let i = index">
+          <div [formGroupName]="i" fxLayoutGap="1rem">
+        <mat-grid-list cols="12" rowHeight="1:1" gutterSize="1rem">
+          <mat-grid-tile colspan="8">
+
+            <mat-form-field>
+              <mat-select placeholder="Code" formControlName="code">
+                <mat-option *ngFor="let code of diagCodes" [value]="code">
+                  {{code.code}} - {{code.desc}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+          </mat-grid-tile>
+          <mat-grid-tile colspan="4">
+
+            <mat-form-field>
+              <input matInput currencyMask placeholder="Price" type="text" formControlName="price"/>
+            </mat-form-field>
+
+          </mat-grid-tile>
+        </mat-grid-list>
+
+
+            </div>
+          </div>
+      </div>
+
+      <span>Total: {{superbillTotal | currency}}</span>
+
+      <button mat-raised-button (click)="submitClaim()" fxFlex="row" fxLayoutAlign="center">
+        <mat-spinner diameter="20" style="margin: .5rem" *ngIf="isLoading"></mat-spinner>
+
+        <span *ngIf="!isLoading">Submit Claim</span>
+      </button>
+
+
+      <!--<mat-form-field fxFlexFill>-->
+      <!--<input matInput placeholder="First Name" type="text" formControlName="first_name" required>-->
+      <!--</mat-form-field>-->
+
+      <!--<mat-form-field fxFlexFill>-->
+      <!--<input matInput placeholder="Last Name" type="text" formControlName="last_name" required>-->
+      <!--</mat-form-field>-->
+
+      <!--<div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="1rem">-->
+      <!--<mat-form-field fxFlex="1 1">-->
+      <!--<input matInput placeholder="Member ID" type="text" formControlName="id" required>-->
+      <!--</mat-form-field>-->
+
+      <!--<mat-form-field fxFlex="1 1">-->
+      <!--<input matInput placeholder="Birth Date" type="text" formControlName="birth_date" required>-->
+      <!--</mat-form-field>-->
+      <!--</div>-->
+      <!--</div>-->
+
+      <!--<div formGroupName="provider">-->
+      <!--<h1>Provider</h1>-->
+
+      <!--<mat-form-field fxFlexFill>-->
+      <!--<input matInput placeholder="First Name" type="text" formControlName="first_name" required>-->
+      <!--</mat-form-field>-->
+
+      <!--<mat-form-field fxFlexFill>-->
+      <!--<input matInput placeholder="Last Name" type="text" formControlName="last_name" required>-->
+      <!--</mat-form-field>-->
+
+      <!--<mat-form-field>-->
+      <!--<input matInput placeholder="NPI" type="text" formControlName="npi" required>-->
+      <!--</mat-form-field>-->
+      <!--</div>-->
+
+      <!--<mat-form-field>-->
+      <!--<input matInput placeholder="Trading Partner" type="text" formControlName="trading_partner_id" required>-->
+      <!--</mat-form-field>-->
+
+      <!--<button color="accent" (click)="getEligibility()" mat-raised-button fxFlex="row" fxLayoutAlign="center"-->
+      <!--[disabled]="!eligibilityForm.valid" style="margin-top: 1rem">-->
+
+      <!--</button>-->
+
+    </form>
+  </div>
+</section>
